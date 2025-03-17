@@ -1,20 +1,37 @@
-<input 
-  type="text" 
-  [(ngModel)]="searchTerm" 
-  placeholder="Digite o nome ou sobrenome do personagem" 
-  class="search-input" 
-/>
-
-<button (click)="searchCharacter()" class="search-btn">Pesquisar</button>
-
-<!-- Exibe os personagens após realizar a pesquisa -->
-<div class="characters-container" *ngIf="filteredCharacters.length > 0">
-  <div class="character-card" *ngFor="let item of filteredCharacters">
-    <img [src]="item.image" alt="{{ item.name }}">
-    <p>{{ item.name }}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="search-container">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      placeholder="Digite o nome ou sobrenome do personagem" 
+      class="search-input" 
+    />
+    <button (click)="searchCharacter()" class="search-btn">Pesquisar</button>
   </div>
-</div>
-
-<!-- Mensagem caso não encontre nenhum personagem -->
-<p *ngIf="filteredCharacters.length === 0 && searchTerm.trim() !== ''">Nenhum personagem encontrado!</p>
-<app-spells-list></app-spells-list>
+  
+  <!-- Exibe os personagens após a pesquisa -->
+  <div class="characters-container" *ngIf="filteredCharacters.length > 0">
+    <div class="character-card" *ngFor="let item of filteredCharacters">
+      <img [src]="item.image" alt="{{ item.name }}">
+      <p>{{ item.name }}</p>
+    </div>
+  </div>
+  
+  <p *ngIf="filteredCharacters.length === 0 && searchTerm.trim() !== ''">
+    Nenhum personagem encontrado!
+  </p>
+  
+  <!-- Lista de feitiços agora está abaixo da barra de pesquisa -->
+  <div class="spells-wrapper">
+    <app-spells-list></app-spells-list>
+  </div>
+  
+</body>
+</html>

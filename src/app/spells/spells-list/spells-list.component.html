@@ -1,6 +1,14 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
     <button class="toggle-btn" (click)="toggleSpells()">
-      {{ showSpells ? 'Fechar Lista de Spells' : 'Mostrar Lista de Spells' }}
+      {{ showSpells ? 'Fechar Lista de Feitiços' : 'Mostrar Lista de Feitiços' }}
     </button>
   
     <div class="spells-container" *ngIf="showSpells">
@@ -11,3 +19,5 @@
     </div>
   </div>
   
+</body>
+</html>

@@ -1,22 +1,20 @@
-import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { spell } from '../../spell';
+import { spell } from '../../spell'; // Certifique-se de que 'spell' está importado corretamente
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-spells-list',
   standalone: true,  // Componente standalone
-  imports: [ CommonModule ],
+  imports: [CommonModule],
   templateUrl: './spells-list.component.html',
   styleUrls: ['./spells-list.component.css']
 })
 export class SpellsListComponent {
-
   private apiUrl = 'https://hp-api.onrender.com/api/spells';
-  title = 'spa-harry-potter';
   spells: spell[] = [];
-  showSpells = false; // Controla a visibilidade da lista de spells
+  showSpells = false; // Controla a visibilidade da lista de feitiços
 
   constructor(private http: HttpClient) {
     this.getSpells().subscribe(dados => {

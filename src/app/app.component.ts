@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Character } from './character'; // Certifique-se de que o Character está correto
+import { Character } from './character'; // Certifique-se de que 'Character' está importado corretamente
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SpellsListComponent } from './spells/spells-list/spells-list.component'; // Se você ainda usar o componente de Spells
+import { SpellsListComponent } from './spells/spells-list/spells-list.component'; // Importação do componente de feitiços
 
 @Component({
   selector: 'app-root',
