@@ -1,0 +1,13 @@
+<div class="container">
+    <button class="toggle-btn" (click)="toggleSpells()">
+      {{ showSpells ? 'Fechar Lista de Spells' : 'Mostrar Lista de Spells' }}
+    </button>
+  
+    <div class="spells-container" *ngIf="showSpells">
+      <div class="spell-card" *ngFor="let spell of spells">
+        <h2>{{ spell.name }}</h2>
+        <p>{{ spell.description }}</p>
+      </div>
+    </div>
+  </div>
+  
